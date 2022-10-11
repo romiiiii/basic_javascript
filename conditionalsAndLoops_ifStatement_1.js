@@ -1,4 +1,4 @@
-var jam = 15;
+var jam = 12;
 
 if (jam >= 13){
     console.log(jam + ' PM')
