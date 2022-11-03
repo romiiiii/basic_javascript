@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculation</title>
+</head>
+<body>
+    <script>
+        function cekbb(nama, bb, tb){
+            this.nama = nama;
+            this.bb = bb;
+            this.tb = tb;
+            this.cekstatus = function(){
+                tb /= 100;
+                bmi = bb / (tb * tb);
+
+                if (bmi > 27) {
+                    alert("Gemuk, Kelebihan berat badan tingkat berat");
+                }else if ((bmi >= 25.1) & (bmi <= 27)){
+                    alert("Gemuk, Kelebihan berat badan tingkat ringan");
+                }else if ((bmi >= 18.5) & (bmi <= 25)){
+                    alert("Normal");
+                }else if ((bmi >= 17) & (bmi <= 18.4)){
+                    alert("Kurus, Kekurangan berat badan tingkat ringan");
+                }else {
+                    alert("Kurus, Kekurangan berat badan tingkat berat");
+                }
+            }
+        }
+        var name = prompt("Siapa Namamu?");
+        var weight = prompt("Seberapa Berat Badanmu?")
+        var height = prompt("Berapa Tinggi Badanmu?")
+        var romi = new cekbb(name, weight, height)
+        console.log(romi)
+        console.log(romi.cekstatus())
+    </script>
+</body>
+</html>
