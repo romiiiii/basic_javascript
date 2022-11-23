@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css -->
+    <style>
+        span {
+            cursor: pointer;
+        }
+        .gambar {
+            height: 450px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="gambar" id="slider" src="images/ter1.jpg" alt="terarria"><br>
+        <button onclick="sebelum()">previous</button>
+        <span  onclick="klikAngka(0)">1</span>
+        <span  onclick="klikAngka(1)">2</span>
+        <span  onclick="klikAngka(2)">3</span>
+        <span  onclick="klikAngka(3)">4</span>
+        <span  onclick="klikAngka(4)">5</span>
+        <span  onclick="klikAngka(5)">6</span>
+        <span  onclick="klikAngka(6)">7</span>
+        <span  onclick="klikAngka(7)">8</span>
+        <span  onclick="klikAngka(8)">9</span>
+        <span  onclick="klikAngka(9)">10</span>
+        <button onclick="sesudah()">Next</button>
+    </div>
+
+    <!-- javascript -->
+    <script>
+        var images = [
+            './images/ter1.jpg',
+            './images/ter2.jpg',
+            './images/ter3.jpg',
+            './images/ter4.jpg',
+            './images/ter5.jpg',
+            './images/ter6.jpg',
+            './images/ter7.jpg',
+            './images/ter8.jpg',
+            './images/ter9.jpg',
+            './images/ter10.jpg',
+        ];
+
+        var num = 0;
+        function klikAngka(params) {
+            console.log(params)
+            var slider = document.getElementById('slider');
+            event.preventDefault
+            return slider.src = images[params]
+        }
+        function sesudah() {
+            var slider = document.getElementById('slider');
+            num++;
+            if(num >= images.length) {
+            num = 0;
+            }
+            slider.src = images[num];
+        }
+        function sebelum() {
+            var slider = document.getElementById('slider');
+            num--;
+            if(num < 0) {
+                num = images.length-1;
+            }
+            slider.src = images[num];
+        }
+    </script>
+</body>
+</html>
